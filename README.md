@@ -2,4 +2,4 @@
 
 ### JS基础
 
-- [浏览器缓存机制小结](https://github.com/chenjiangsong/blog/issues/1)
+- [变量/作用域/内存](https://github.com/ziv-zjc/blog/issues/1)
