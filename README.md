@@ -9,3 +9,6 @@
 
 ### 算法
 - [JS实现 大整数加法](https://github.com/ziv-zjc/blog/issues/3)
+
+### 解决方案
+- [实现动态加载一个 JavaScript 资源](https://github.com/ziv-zjc/blog/issues/4)
