@@ -10,6 +10,7 @@
 ### 算法
 - [JS实现 大整数加法](https://github.com/ziv-zjc/blog/issues/3)
 - [常见排序算法实现](https://github.com/ziv-zjc/blog/issues/5)
+- [在长文本里面，取出出现次数最多的字符串](https://github.com/ziv-zjc/blog/issues/6)
 
 ### 解决方案
 - [实现动态加载一个 JavaScript 资源](https://github.com/ziv-zjc/blog/issues/4)
