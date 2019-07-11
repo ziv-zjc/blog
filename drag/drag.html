@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>拖拽</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .square {
+            width: 100px;
+            height: 100px;
+            background: #FFD39B;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="square"></div>
+    <script>
+        window.onload = function() {
+            let $square = document.getElementsByClassName('square')[0]
+            let originOffetL = 0
+            let originOffetT = 0
+            let squareWidth = $square.offsetWidth
+            let squareHeight = $square.offsetHeight
+
+            function mouseCallback(e) {
+                let mDocumentX = e.clientX
+                let mDocumentY = e.clientY
+                let maxWidth = document.documentElement.clientWidth //最大宽度
+                let maxHeight = document.documentElement.clientHeight
+                let currentL = mDocumentX - originOffetL //元素移动后的左偏移量
+                let currentT = mDocumentY - originOffetT
+                if (currentL + squareWidth > maxWidth) { //考虑窗口边界
+                    $square.style.left = maxWidth - squareWidth + "px"
+                } else if (currentL < 0) { //考虑窗口边界
+                    $square.style.left = 0 + "px"
+                } else {
+                    $square.style.left = currentL + "px"
+                }
+
+                if (currentT + squareHeight > maxHeight) { //考虑窗口边界
+                    $square.style.top = maxHeight - squareHeight + "px"
+
+                } else if (currentT < 0) { //考虑窗口边界
+                    $square.style.top = 0 + "px"
+                } else {
+                    $square.style.top = currentT + "px"
+                }
+            }
+
+            $square.addEventListener('mousedown', (e) => {
+                let mSquareX = e.clientX //当前鼠标位置坐标
+                let mSquareY = e.clientY
+                let oSquareL = $square.offsetLeft //当前元素偏移位置
+                let oSquareT = $square.offsetTop
+                originOffetL = mSquareX - oSquareL // 鼠标位置和元素偏移差值，为了讲鼠标位置重置为元素0，0位置
+                originOffetT = mSquareY - oSquareT
+                document.addEventListener('mousemove', mouseCallback)
+            });
+
+            $square.addEventListener('mouseup', (e) => {
+                document.removeEventListener('mousemove', mouseCallback)
+            })
+        }
+    </script>
+</body>
+
+</html>
