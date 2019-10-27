@@ -11,6 +11,9 @@
 ### 设计模式
 - [发布订阅模式的简单实现](https://github.com/ziv-zjc/blog/issues/2)
 
+### 浏览器
+- [V8是如何执行JavaScript代码的？](https://github.com/ziv-zjc/blog/issues/11)
+
 ### 算法
 - [JS实现 大整数加法](https://github.com/ziv-zjc/blog/issues/3)
 - [常见排序算法实现](https://github.com/ziv-zjc/blog/issues/5)
